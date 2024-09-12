@@ -74,6 +74,8 @@ export class FloatingOneTap extends Widget<Omit<FloatingOneTapParams, 'appName'>
   }
 
   private openFullAuth(value?: AuthParams) {
+    this.events.emit(FloatingOneTapInternalEvents.SHOW_FULL_AUTH);
+    
     const params = {
       statsFlowSource: AuthStatsFlowSource.FLOATING_ONE_TAP,
       ...value,
